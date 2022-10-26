@@ -2,27 +2,31 @@ package homeWork11.coffee.order;
 
 public class Order {
 
-    private final int orderNumber;
     private final String customerName;
+    private Integer number;
 
-    public Order(int orderNumber, String customerName) {
-        this.orderNumber = orderNumber;
+    public Order(String customerName) {
         this.customerName = customerName;
     }
 
-    public int getOrderNumber() {
-        return orderNumber;
-    }
 
     public String getCustomerName() {
         return customerName;
     }
 
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
     @Override
     public String toString() {
-        return  "\n" + "Order{" +
-                "orderNumber=" + orderNumber +
-                ", customerName='" + customerName + '\'' +
+        return "Order{" +
+                "customerName='" + customerName + '\'' +
+                ", number=" + number +
                 '}';
     }
 }
