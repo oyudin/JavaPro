@@ -3,32 +3,40 @@ package homeWork11.coffee.order;
 import java.util.*;
 
 public class CoffeeOrderBoard {
-
-    LinkedList<Order> orders = new LinkedList<>();
+    HashMap<Integer, Order> orders = new HashMap<>();
+    int counter = 1;
 
     public void add(Order order) {
-        orders.addLast(order);
+
+        if (!orders.containsKey(order.getOrderNumber()))
+            orders.put(order.getOrderNumber(), order);
+        else System.err.println("The order already exists: " + order);
     }
 
-    public void deliver() {
-        orders.pollFirst();
+    public Order deliver() {
+        orders.remove(counter);
+        counter++;
+        return orders.get(counter);
     }
 
-    public void deliver(int turnNumber) {
-        for (Order order : orders) {
+    public Order deliver(int turnNumber) {
+        for (Order order : orders.values()) {
             if (order.getOrderNumber() == turnNumber) {
-                orders.remove(order);
+                orders.remove(order.getOrderNumber());
                 break;
             }
         }
+        return orders.get(turnNumber);
     }
 
-    public void draw(LinkedList<Order> orders) {
+
+    public void draw(HashMap<Integer, Order> orders) {
         System.out.println("=============" + "\n" + "Num | Name");
-        for (Order order : orders) {
+        for (Order order : this.orders.values()) {
             System.out.println(order.getOrderNumber() + "  | " + order.getCustomerName());
         }
     }
+
 
     @Override
     public String toString() {
