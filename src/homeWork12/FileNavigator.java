@@ -4,7 +4,7 @@ import java.util.*;
 
 public class FileNavigator {
 
-    Map<String, ArrayList<FileData>> fileStorage = new HashMap<>();
+   private Map<String, ArrayList<FileData>> fileStorage = new HashMap<>();
 
     public void add(String pathToFile, FileData file) {
 
@@ -54,6 +54,10 @@ public class FileNavigator {
                 .sorted(Comparator.comparingInt((FileData::getSize)).reversed()).toList();
         System.out.println("Sorted by size: " + files);
         return sortedBySizeFiles;
+    }
+
+    public Map<String, ArrayList<FileData>> getFileStorage() {
+        return fileStorage;
     }
 
     @Override

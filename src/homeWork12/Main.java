@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         FileNavigator fileNavigator = new FileNavigator();
-        fileNavigator.fileStorage.put("src/homeWork12/folder0", new ArrayList<FileData>());
+        fileNavigator.getFileStorage().put("src/homeWork12/folder0", new ArrayList<FileData>());
 
 
         FileData fileData0 = new FileData("File0", 3, "src/homeWork12/folder0");
