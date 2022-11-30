@@ -19,11 +19,7 @@ public class ProductMethods {
         System.out.println("\nBooks with discount: ");
         productList = productList.stream()
                 .filter(s -> s.getType().equals("Book") && (s.isDiscount()))
-                .filter(s -> {
-                    s.setPrice(s.getPrice() - s.getPrice() / 100 * 10);
-                    return true;
-                })
-                .toList();
+                .peek(product -> product.setPrice(product.getPrice() - product.getPrice() / 100 * 10)).toList();
 
         System.out.println(productList);
         return productList;
