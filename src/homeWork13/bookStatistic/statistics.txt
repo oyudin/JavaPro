@@ -1,0 +1,4 @@
+[The most popular words and their count: [что=203, лет=164, или=149, как=145, они=134, все=113, тысяч=112, люди=112, это=103, если=87]
+, The sum of all unique words:  9744
+, The most popular words and their length: {что=3, если=4, как=3, тысяч=5, или=3, все=3, лет=3, они=3, это=3, люди=4}
+]
